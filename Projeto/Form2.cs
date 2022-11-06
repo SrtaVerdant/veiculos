@@ -1,0 +1,55 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Data.SqlClient;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Projeto
+{
+    public partial class Form2 : Form
+    {
+        SqlConnection conexao = new SqlConnection("Data Source=SRTAVERDANT;Initial Catalog=cadastro;Integrated Security=True");
+        SqlCommand comando;
+        SqlDataAdapter da;
+        SqlDataReader dr;
+        string strSQL;
+
+        public Form2()
+        {
+            InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int retorno;
+
+            ConexaoDB bd = new ConexaoDB();
+
+            if(txtIdFab.Text == "" || txtIdFab.Text == "")
+            {
+                MessageBox.Show("Campos inválidos");
+            }
+            else
+            {
+                int id = Convert.ToInt32(txtIdFab.Text);
+                retorno = bd.insertFabricante(id, txtDescFab.Text);
+                if (retorno > 0)
+                {
+                    MessageBox.Show("Cad Efetuado");
+                }
+                else
+                {
+                    MessageBox.Show("Deu ruim");
+                }
+                txtDescFab.Text = "";
+                txtIdFab.Text = "";
+            }
+
+        }
+    }
+}

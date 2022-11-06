@@ -1,0 +1,28 @@
+C:\Users\autologon\Desktop\Aula06C#\Projeto\Projeto\obj\Debug\Projeto.csproj.AssemblyReference.cache
+C:\Users\autologon\Desktop\Aula06C#\Projeto\Projeto\obj\Debug\Projeto.csproj.SuggestedBindingRedirects.cache
+C:\Users\autologon\Desktop\Aula06C#\Projeto\Projeto\obj\Debug\Projeto.Form1.resources
+C:\Users\autologon\Desktop\Aula06C#\Projeto\Projeto\obj\Debug\Projeto.Form2.resources
+C:\Users\autologon\Desktop\Aula06C#\Projeto\Projeto\obj\Debug\Projeto.Form3.resources
+C:\Users\autologon\Desktop\Aula06C#\Projeto\Projeto\obj\Debug\Projeto.Properties.Resources.resources
+C:\Users\autologon\Desktop\Aula06C#\Projeto\Projeto\obj\Debug\Projeto.csproj.GenerateResource.cache
+C:\Users\autologon\Desktop\Aula06C#\Projeto\Projeto\obj\Debug\Projeto.csproj.CoreCompileInputs.cache
+C:\Users\autologon\Desktop\Aula06C#\Projeto\Projeto\bin\Debug\Projeto.exe.config
+C:\Users\autologon\Desktop\Aula06C#\Projeto\Projeto\bin\Debug\Projeto.exe
+C:\Users\autologon\Desktop\Aula06C#\Projeto\Projeto\bin\Debug\Projeto.pdb
+C:\Users\autologon\Desktop\Aula06C#\Projeto\Projeto\obj\Debug\Projeto.exe
+C:\Users\autologon\Desktop\Aula06C#\Projeto\Projeto\obj\Debug\Projeto.pdb
+C:\Users\gabri\Downloads\Projeto (1)\Projeto\Projeto\bin\Debug\banco.mdf
+C:\Users\gabri\Downloads\Projeto (1)\Projeto\Projeto\bin\Debug\banco_log.ldf
+C:\Users\gabri\Downloads\Projeto (1)\Projeto\Projeto\bin\Debug\Projeto.exe.config
+C:\Users\gabri\Downloads\Projeto (1)\Projeto\Projeto\bin\Debug\Projeto.exe
+C:\Users\gabri\Downloads\Projeto (1)\Projeto\Projeto\bin\Debug\Projeto.pdb
+C:\Users\gabri\Downloads\Projeto (1)\Projeto\Projeto\obj\Debug\Projeto.csproj.AssemblyReference.cache
+C:\Users\gabri\Downloads\Projeto (1)\Projeto\Projeto\obj\Debug\Projeto.csproj.SuggestedBindingRedirects.cache
+C:\Users\gabri\Downloads\Projeto (1)\Projeto\Projeto\obj\Debug\Projeto.Form1.resources
+C:\Users\gabri\Downloads\Projeto (1)\Projeto\Projeto\obj\Debug\Projeto.Form2.resources
+C:\Users\gabri\Downloads\Projeto (1)\Projeto\Projeto\obj\Debug\Projeto.Form3.resources
+C:\Users\gabri\Downloads\Projeto (1)\Projeto\Projeto\obj\Debug\Projeto.Properties.Resources.resources
+C:\Users\gabri\Downloads\Projeto (1)\Projeto\Projeto\obj\Debug\Projeto.csproj.GenerateResource.cache
+C:\Users\gabri\Downloads\Projeto (1)\Projeto\Projeto\obj\Debug\Projeto.csproj.CoreCompileInputs.cache
+C:\Users\gabri\Downloads\Projeto (1)\Projeto\Projeto\obj\Debug\Projeto.exe
+C:\Users\gabri\Downloads\Projeto (1)\Projeto\Projeto\obj\Debug\Projeto.pdb
