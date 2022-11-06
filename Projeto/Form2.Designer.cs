@@ -34,7 +34,7 @@
             this.txtDescFab = new System.Windows.Forms.TextBox();
             this.btnIncluirFab = new System.Windows.Forms.Button();
             this.btnConsultarFab = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnEditarFab = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -91,14 +91,15 @@
             this.btnConsultarFab.UseVisualStyleBackColor = true;
             this.btnConsultarFab.Click += new System.EventHandler(this.btnConsultarFab_Click);
             // 
-            // button3
+            // btnEditarFab
             // 
-            this.button3.Location = new System.Drawing.Point(220, 139);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "Editar";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnEditarFab.Location = new System.Drawing.Point(220, 139);
+            this.btnEditarFab.Name = "btnEditarFab";
+            this.btnEditarFab.Size = new System.Drawing.Size(75, 23);
+            this.btnEditarFab.TabIndex = 6;
+            this.btnEditarFab.Text = "Editar";
+            this.btnEditarFab.UseVisualStyleBackColor = true;
+            this.btnEditarFab.Click += new System.EventHandler(this.btnEditarFab_Click);
             // 
             // button4
             // 
@@ -115,7 +116,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(418, 178);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnEditarFab);
             this.Controls.Add(this.btnConsultarFab);
             this.Controls.Add(this.btnIncluirFab);
             this.Controls.Add(this.txtDescFab);
@@ -138,7 +139,7 @@
         private System.Windows.Forms.TextBox txtDescFab;
         private System.Windows.Forms.Button btnIncluirFab;
         private System.Windows.Forms.Button btnConsultarFab;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnEditarFab;
         private System.Windows.Forms.Button button4;
     }
 }

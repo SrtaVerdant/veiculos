@@ -185,5 +185,23 @@ namespace Projeto
 
             return retorno;
         }
+
+        public int updateFabricante(Fabricante fabricante)
+        {
+            try
+            {
+                conexao.Open();
+                sql = "update Fabricantes set Descricao='" + fabricante.Descricao + "' where id=" + fabricante.Id;
+                comando = new SqlCommand(sql, conexao);
+                retorno = comando.ExecuteNonQuery();
+                comando.Dispose();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro" + ex.Message);
+            }
+
+            return retorno;
+        }
     }
 }

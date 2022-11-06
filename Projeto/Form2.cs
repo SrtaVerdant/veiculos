@@ -92,5 +92,37 @@ namespace Projeto
 
             }
         }
+
+        private void btnEditarFab_Click(object sender, EventArgs e)
+        {
+            int retorno;
+
+           
+
+            int id = Convert.ToInt32(txtIdFab.Text);
+
+            if (txtIdFab.Text == "" || id == 0 || txtDescFab.Text == "")
+            {
+                MessageBox.Show("Campos inválidos");
+            }
+            else
+            {
+                ConexaoDB bd = new ConexaoDB();
+                Fabricante fabricante = new Fabricante(id, txtDescFab.Text);
+                retorno = bd.updateFabricante(fabricante);
+
+                if (retorno > 0)
+                {
+                    MessageBox.Show("Alteração de veiculo realizada!");
+                }
+                else
+                {
+                    MessageBox.Show("Deu ruim");
+                }      
+                
+            }
+            txtIdFab.Text = "";
+            txtDescFab.Text = "";
+        }
     }
 }
