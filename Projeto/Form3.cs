@@ -26,15 +26,22 @@ namespace Projeto
             List<Fabricante> lista = new List<Fabricante>();
             lista = db.getAllFabricantes();
 
-            foreach(Fabricante fabricante in lista)
+            if(lista.Count == 0)
             {
-                selectFabricante.Items.Add(fabricante.Id + " - " + fabricante.Descricao);
-            }
-        }
+                btnAlterarVeiculo.Enabled = false;
+                btnConsultarVeiculo.Enabled = false;
+                btnExcluirVeiculo.Enabled = false;
+                btnInserirVeiculo.Enabled = false;
 
-        private void listBox1_SelectedValueChanged(object sender, EventArgs e)
-        {
-            //Console.WriteLine(selectFabricante.SelectedItem.ToString());
+                MessageBox.Show("Adicione primeiro um Fabricante");
+            }
+            else
+            {
+                foreach (Fabricante fabricante in lista)
+                {
+                    selectFabricante.Items.Add(fabricante.Id + " - " + fabricante.Descricao);
+                }
+            }            
         }
 
         private void btnInserirVeiculo_Click(object sender, EventArgs e)

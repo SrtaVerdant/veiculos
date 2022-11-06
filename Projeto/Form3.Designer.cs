@@ -168,7 +168,6 @@
             this.selectFabricante.Name = "selectFabricante";
             this.selectFabricante.Size = new System.Drawing.Size(259, 43);
             this.selectFabricante.TabIndex = 16;
-            this.selectFabricante.SelectedValueChanged += new System.EventHandler(this.listBox1_SelectedValueChanged);
             // 
             // Form3
             // 
