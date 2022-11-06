@@ -32,8 +32,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtIdFab = new System.Windows.Forms.TextBox();
             this.txtDescFab = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnIncluirFab = new System.Windows.Forms.Button();
+            this.btnConsultarFab = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -62,6 +62,7 @@
             this.txtIdFab.Name = "txtIdFab";
             this.txtIdFab.Size = new System.Drawing.Size(100, 20);
             this.txtIdFab.TabIndex = 2;
+            this.txtIdFab.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIdFab_KeyPress);
             // 
             // txtDescFab
             // 
@@ -70,24 +71,25 @@
             this.txtDescFab.Size = new System.Drawing.Size(269, 20);
             this.txtDescFab.TabIndex = 3;
             // 
-            // button1
+            // btnIncluirFab
             // 
-            this.button1.Location = new System.Drawing.Point(16, 139);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Incluir";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnIncluirFab.Location = new System.Drawing.Point(16, 139);
+            this.btnIncluirFab.Name = "btnIncluirFab";
+            this.btnIncluirFab.Size = new System.Drawing.Size(75, 23);
+            this.btnIncluirFab.TabIndex = 4;
+            this.btnIncluirFab.Text = "Incluir";
+            this.btnIncluirFab.UseVisualStyleBackColor = true;
+            this.btnIncluirFab.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // btnConsultarFab
             // 
-            this.button2.Location = new System.Drawing.Point(118, 139);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Consultar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnConsultarFab.Location = new System.Drawing.Point(118, 139);
+            this.btnConsultarFab.Name = "btnConsultarFab";
+            this.btnConsultarFab.Size = new System.Drawing.Size(75, 23);
+            this.btnConsultarFab.TabIndex = 5;
+            this.btnConsultarFab.Text = "Consultar";
+            this.btnConsultarFab.UseVisualStyleBackColor = true;
+            this.btnConsultarFab.Click += new System.EventHandler(this.btnConsultarFab_Click);
             // 
             // button3
             // 
@@ -114,8 +116,8 @@
             this.ClientSize = new System.Drawing.Size(418, 178);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnConsultarFab);
+            this.Controls.Add(this.btnIncluirFab);
             this.Controls.Add(this.txtDescFab);
             this.Controls.Add(this.txtIdFab);
             this.Controls.Add(this.label2);
@@ -134,8 +136,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtIdFab;
         private System.Windows.Forms.TextBox txtDescFab;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnIncluirFab;
+        private System.Windows.Forms.Button btnConsultarFab;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
     }

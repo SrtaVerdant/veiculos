@@ -51,5 +51,46 @@ namespace Projeto
             }
 
         }
+
+        private void txtIdFab_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void btnConsultarFab_Click(object sender, EventArgs e)
+        {
+            ConexaoDB bd = new ConexaoDB();
+
+            int id = Convert.ToInt32(txtIdFab.Text);
+
+            if (txtIdFab.Text == "" || id == 0)
+            {
+                txtIdFab.Text = "";
+                txtDescFab.Text = "";
+              
+                MessageBox.Show("Campo ID inválido!");
+            }
+            else
+            {
+                Fabricante fabricante = null;
+                fabricante = bd.getFabricanteById(id);
+
+                if (fabricante == null)
+                {
+                    txtIdFab.Text = "";
+                    txtDescFab.Text = "";
+                    MessageBox.Show("Não foi encontrado fabricante com esse ID.");
+                }
+                else
+                {                   
+                    txtDescFab.Text = fabricante.Descricao;                
+                    
+                }
+
+            }
+        }
     }
 }

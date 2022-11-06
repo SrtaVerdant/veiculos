@@ -113,7 +113,6 @@ namespace Projeto
                     txtModVeiculo.Text = veiculo.Modelo;
                     txtAnoVeiculo.Text = veiculo.Ano.ToString();
                     txtPrecoVeiculo.Text = veiculo.Preco.ToString();
-                    Console.WriteLine(veiculo.Fabricante.Id + " - " + veiculo.Fabricante.Descricao);
                     if (selectFabricante.Items.Contains(veiculo.Fabricante.Id + " - " + veiculo.Fabricante.Descricao))
                     {
                         int cont = 0;
@@ -127,9 +126,7 @@ namespace Projeto
                         selectFabricante.SelectedIndex = cont;
 
                     }
-                    else {
-                        
-                    }
+                    
                    
                 }
                
@@ -220,6 +217,14 @@ namespace Projeto
                 txtModVeiculo.Text = "";
                 txtPrecoVeiculo.Text = "";
                 selectFabricante.SelectedIndex = 0;
+            }
+        }
+
+        private void txtCodVeiculo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
+            {
+                e.Handled = true;
             }
         }
     }

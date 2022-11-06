@@ -95,6 +95,7 @@
             this.txtCodVeiculo.Name = "txtCodVeiculo";
             this.txtCodVeiculo.Size = new System.Drawing.Size(70, 20);
             this.txtCodVeiculo.TabIndex = 5;
+            this.txtCodVeiculo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodVeiculo_KeyPress);
             // 
             // txtModVeiculo
             // 
