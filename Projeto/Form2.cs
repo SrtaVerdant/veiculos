@@ -35,10 +35,7 @@ namespace Projeto
                 tratarRetorno(retorno);
             }
             limpaCampos();
-
-        }
-
-        
+        }        
 
         private void btnConsultarFab_Click(object sender, EventArgs e)
         {
@@ -65,14 +62,12 @@ namespace Projeto
                 {                   
                     txtDescFab.Text = fabricante.Descricao;                    
                 }
-
             }
         }
 
         private void btnEditarFab_Click(object sender, EventArgs e)
         {
-            int retorno;
-            
+            int retorno;            
 
             if (txtIdFab.Text == "" || Convert.ToInt32(txtIdFab.Text) == 0 || txtDescFab.Text == "")
             {
@@ -93,8 +88,7 @@ namespace Projeto
 
         private void btnExcluirFab_Click(object sender, EventArgs e)
         {
-            int retorno;
-           
+            int retorno;           
 
             if (txtIdFab.Text == "" || Convert.ToInt32(txtIdFab.Text) == 0)
             {

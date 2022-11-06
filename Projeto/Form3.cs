@@ -21,8 +21,6 @@ namespace Projeto
         private void Form3_Load(object sender, EventArgs e)
         {
             ConexaoDB db = new ConexaoDB();
-
-
             List<Fabricante> lista = new List<Fabricante>();
             lista = db.getAllFabricantes();
 
