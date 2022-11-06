@@ -65,31 +65,21 @@ namespace Projeto
         }
 
         public int insertVeiculo(Veiculos veiculo)
-        {
-            Veiculos veiculo1 = null;
-            ConexaoDB conexaoDB = new ConexaoDB();
-            veiculo1 = conexaoDB.getVeiculoById(veiculo.Id);
-
-            if (veiculo1 == null)
+        {                     
+            try
             {
-                retorno = 10;
+                conexao.Open();
+                sql = "insert into Veiculos ( Id, Modelo, Ano, Preco, ID_Fabricante) values ( " + veiculo.Id + ", '"
+                    + veiculo.Modelo + "', '" + veiculo.Ano + "', '" + veiculo.Preco+"','" + veiculo.Fabricante.Id + "')";
+                comando = new SqlCommand(sql, conexao);
+                retorno = comando.ExecuteNonQuery();
+                comando.Dispose();
             }
-            else
+            catch (Exception ex)
             {
-                try
-                {
-                    conexao.Open();
-                    sql = "insert into Veiculos ( Id, Modelo, Ano, Preco, ID_Fabricante) values ( " + veiculo.Id + ", '"
-                        + veiculo.Modelo + "', '" + veiculo.Ano + "', '" + veiculo.Preco+"','" + veiculo.Fabricante.Id + "')";
-                    comando = new SqlCommand(sql, conexao);
-                    retorno = comando.ExecuteNonQuery();
-                    comando.Dispose();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Erro" + ex.Message);
-                }
+                MessageBox.Show("Erro" + ex.Message);
             }
+            
             return retorno;
         }
 

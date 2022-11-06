@@ -17,7 +17,6 @@ namespace Projeto
         SqlCommand comando;
         SqlDataAdapter da;
         SqlDataReader dr;
-        string strSQL;
 
         public Form2()
         {
@@ -62,11 +61,9 @@ namespace Projeto
 
         private void btnConsultarFab_Click(object sender, EventArgs e)
         {
-            ConexaoDB bd = new ConexaoDB();
+            ConexaoDB bd = new ConexaoDB();            
 
-            int id = Convert.ToInt32(txtIdFab.Text);
-
-            if (txtIdFab.Text == "" || id == 0)
+            if (txtIdFab.Text == "" || Convert.ToInt32(txtIdFab.Text) == 0)
             {
                 txtIdFab.Text = "";
                 txtDescFab.Text = "";
@@ -75,6 +72,7 @@ namespace Projeto
             }
             else
             {
+                int id = Convert.ToInt32(txtIdFab.Text);
                 Fabricante fabricante = null;
                 fabricante = bd.getFabricanteById(id);
 
@@ -96,14 +94,15 @@ namespace Projeto
         private void btnEditarFab_Click(object sender, EventArgs e)
         {
             int retorno;
-            int id = Convert.ToInt32(txtIdFab.Text);
+            
 
-            if (txtIdFab.Text == "" || id == 0 || txtDescFab.Text == "")
+            if (txtIdFab.Text == "" || Convert.ToInt32(txtIdFab.Text) == 0 || txtDescFab.Text == "")
             {
                 MessageBox.Show("Campos inválidos");
             }
             else
             {
+                int id = Convert.ToInt32(txtIdFab.Text);
                 ConexaoDB bd = new ConexaoDB();
                 Fabricante fabricante = new Fabricante(id, txtDescFab.Text);
                 retorno = bd.updateFabricante(fabricante);
@@ -125,14 +124,15 @@ namespace Projeto
         private void btnExcluirFab_Click(object sender, EventArgs e)
         {
             int retorno;
-            int id = Convert.ToInt32(txtIdFab.Text);
+           
 
-            if (txtIdFab.Text == "" || id == 0)
+            if (txtIdFab.Text == "" || Convert.ToInt32(txtIdFab.Text) == 0)
             {
                 MessageBox.Show("Campos inválidos");
             }
             else
             {
+                int id = Convert.ToInt32(txtIdFab.Text);
                 ConexaoDB bd = new ConexaoDB();
                 retorno = bd.deleteFabricante(id);
 

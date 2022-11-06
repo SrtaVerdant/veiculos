@@ -46,27 +46,26 @@ namespace Projeto
 
         private void btnInserirVeiculo_Click(object sender, EventArgs e)
         {
-            int retorno;
+            int retorno;            
 
-            ConexaoDB bd = new ConexaoDB();
-
-            if (txtCodVeiculo.Text == "" || txtAnoVeiculo.Text == "" || txtModVeiculo.Text == "" || txtPrecoVeiculo.Text == "")
+            if (txtCodVeiculo.Text == "" || Convert.ToInt32(txtCodVeiculo.Text) == 0 || txtAnoVeiculo.Text == "" || txtModVeiculo.Text == "" || txtPrecoVeiculo.Text == "")
             {
                 MessageBox.Show("Campos inválidos");
             }
             else
-            {   
+            {
                 String selectFab = selectFabricante.SelectedItem.ToString();
                 string[] s = selectFab.Split('-');
                 Fabricante fabricante = new Fabricante(Convert.ToInt32(s[0].Trim()), s[1]);
-                
 
                 int id = Convert.ToInt32(txtCodVeiculo.Text);
                 int ano = Convert.ToInt32(txtAnoVeiculo.Text);
                 Double preco = Convert.ToDouble(txtPrecoVeiculo.Text);
                 Veiculos veiculo = new Veiculos(id, txtModVeiculo.Text, ano, preco, fabricante);
-        
+
+                ConexaoDB bd = new ConexaoDB();
                 retorno = bd.insertVeiculo(veiculo);
+
                 if (retorno == 10)
                 {
                     MessageBox.Show("Não é possivel cadastrar o veiculo com o ID informado, tente novamente!");
@@ -78,45 +77,32 @@ namespace Projeto
                 {
                     MessageBox.Show("Deu ruim");
                 }
-                txtCodVeiculo.Text = "";
-                txtAnoVeiculo.Text = "";
-                txtModVeiculo.Text = "";
-                txtPrecoVeiculo.Text = "";
+                limpaCampos();
             }
         }
 
         private void btnConsultarVeiculo_Click(object sender, EventArgs e)
         {
-            ConexaoDB bd = new ConexaoDB();
-
-            int id = Convert.ToInt32(txtCodVeiculo.Text);
-
-            if (txtCodVeiculo.Text == "" || id == 0)
+            if (txtCodVeiculo.Text == "" || Convert.ToInt32(txtCodVeiculo.Text) == 0)
             {
-                txtCodVeiculo.Text = "";
-                txtModVeiculo.Text = "";
-                txtAnoVeiculo.Text = "";
-                txtPrecoVeiculo.Text = "";
-                selectFabricante.SelectedIndex = 0;
+                limpaCampos();
                 MessageBox.Show("Campo ID inválido!");
             }
             else
-            {               
+            {
+                ConexaoDB bd = new ConexaoDB();
+                int id = Convert.ToInt32(txtCodVeiculo.Text);
+
                 Veiculos veiculo = null;
                 veiculo = bd.getVeiculoById(id);
 
                 if (veiculo == null)
                 {
-                    txtCodVeiculo.Text = "";
-                    txtModVeiculo.Text = "";
-                    txtAnoVeiculo.Text = "";
-                    txtPrecoVeiculo.Text = "";
-                    selectFabricante.SelectedIndex = 0;
+                    limpaCampos();
                     MessageBox.Show("Não foi encontrado veículo com esse ID.");
                 }               
                 else
-                {
-                    
+                {                    
                     txtModVeiculo.Text = veiculo.Modelo;
                     txtAnoVeiculo.Text = veiculo.Ano.ToString();
                     txtPrecoVeiculo.Text = veiculo.Preco.ToString();
@@ -131,9 +117,7 @@ namespace Projeto
                             cont++;
                         }
                         selectFabricante.SelectedIndex = cont;
-
-                    }
-                    
+                    }                    
                    
                 }
                
@@ -158,9 +142,7 @@ namespace Projeto
 
         private void btnAlterarVeiculo_Click(object sender, EventArgs e)
         {
-            int retorno;
-
-            ConexaoDB bd = new ConexaoDB();
+            int retorno;            
 
             if (txtCodVeiculo.Text == "" || txtAnoVeiculo.Text == "" || txtModVeiculo.Text == "" || txtPrecoVeiculo.Text == "")
             {
@@ -168,6 +150,7 @@ namespace Projeto
             }
             else
             {
+                ConexaoDB bd = new ConexaoDB();
                 String selectFab = selectFabricante.SelectedItem.ToString();
                 string[] s = selectFab.Split('-');
                 Fabricante fabricante = new Fabricante(Convert.ToInt32(s[0]), s[1]);
@@ -187,29 +170,24 @@ namespace Projeto
                 {
                     MessageBox.Show("Deu ruim");
                 }
-                txtCodVeiculo.Text = "";
-                txtAnoVeiculo.Text = "";
-                txtModVeiculo.Text = "";
-                txtPrecoVeiculo.Text = "";
-                selectFabricante.SelectedIndex = 0;
+                limpaCampos();
             }
         }
 
         private void btnExcluirVeiculo_Click(object sender, EventArgs e)
         {
-            int retorno;
+            int retorno;            
 
-            ConexaoDB bd = new ConexaoDB();
-
-            int id = Convert.ToInt32(txtCodVeiculo.Text);
-
-            if (txtCodVeiculo.Text == "" || id == 0)
+            if (txtCodVeiculo.Text == "" || Convert.ToInt32(txtCodVeiculo.Text) == 0)
             {
                 MessageBox.Show("Campo ID inválido");
             }
             else
-            {                    
-                 retorno = bd.deleteVeiculo(id);
+            {
+                int id = Convert.ToInt32(txtCodVeiculo.Text);
+
+                ConexaoDB bd = new ConexaoDB();                
+                retorno = bd.deleteVeiculo(id);
 
                 if (retorno > 0)
                 {
@@ -219,11 +197,7 @@ namespace Projeto
                 {
                     MessageBox.Show("Deu ruim");
                 }
-                txtCodVeiculo.Text = "";
-                txtAnoVeiculo.Text = "";
-                txtModVeiculo.Text = "";
-                txtPrecoVeiculo.Text = "";
-                selectFabricante.SelectedIndex = 0;
+                limpaCampos();
             }
         }
 
@@ -233,6 +207,15 @@ namespace Projeto
             {
                 e.Handled = true;
             }
+        }
+
+        public void limpaCampos()
+        {
+            txtCodVeiculo.Text = "";
+            txtAnoVeiculo.Text = "";
+            txtModVeiculo.Text = "";
+            txtPrecoVeiculo.Text = "";
+            selectFabricante.SelectedIndex = 0;
         }
     }
 }
