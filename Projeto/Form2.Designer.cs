@@ -35,7 +35,7 @@
             this.btnIncluirFab = new System.Windows.Forms.Button();
             this.btnConsultarFab = new System.Windows.Forms.Button();
             this.btnEditarFab = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnExcluirFab = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -101,21 +101,22 @@
             this.btnEditarFab.UseVisualStyleBackColor = true;
             this.btnEditarFab.Click += new System.EventHandler(this.btnEditarFab_Click);
             // 
-            // button4
+            // btnExcluirFab
             // 
-            this.button4.Location = new System.Drawing.Point(325, 139);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 7;
-            this.button4.Text = "Excluir";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnExcluirFab.Location = new System.Drawing.Point(325, 139);
+            this.btnExcluirFab.Name = "btnExcluirFab";
+            this.btnExcluirFab.Size = new System.Drawing.Size(75, 23);
+            this.btnExcluirFab.TabIndex = 7;
+            this.btnExcluirFab.Text = "Excluir";
+            this.btnExcluirFab.UseVisualStyleBackColor = true;
+            this.btnExcluirFab.Click += new System.EventHandler(this.btnExcluirFab_Click);
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(418, 178);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.btnExcluirFab);
             this.Controls.Add(this.btnEditarFab);
             this.Controls.Add(this.btnConsultarFab);
             this.Controls.Add(this.btnIncluirFab);
@@ -140,6 +141,6 @@
         private System.Windows.Forms.Button btnIncluirFab;
         private System.Windows.Forms.Button btnConsultarFab;
         private System.Windows.Forms.Button btnEditarFab;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnExcluirFab;
     }
 }

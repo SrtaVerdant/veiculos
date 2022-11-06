@@ -203,5 +203,23 @@ namespace Projeto
 
             return retorno;
         }
+
+        public int deleteFabricante(int id)
+        {
+            try
+            {
+                conexao.Open();
+                sql = "delete Fabricantes where id = " + id;
+                comando = new SqlCommand(sql, conexao);
+                retorno = comando.ExecuteNonQuery();
+                comando.Dispose();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro" + ex.Message);
+            }
+
+            return retorno;
+        }
     }
 }

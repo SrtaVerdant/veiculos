@@ -96,9 +96,6 @@ namespace Projeto
         private void btnEditarFab_Click(object sender, EventArgs e)
         {
             int retorno;
-
-           
-
             int id = Convert.ToInt32(txtIdFab.Text);
 
             if (txtIdFab.Text == "" || id == 0 || txtDescFab.Text == "")
@@ -113,13 +110,41 @@ namespace Projeto
 
                 if (retorno > 0)
                 {
-                    MessageBox.Show("Alteração de veiculo realizada!");
+                    MessageBox.Show("Alteração de fabricante realizada!");
                 }
                 else
                 {
                     MessageBox.Show("Deu ruim");
                 }      
                 
+            }
+            txtIdFab.Text = "";
+            txtDescFab.Text = "";
+        }
+
+        private void btnExcluirFab_Click(object sender, EventArgs e)
+        {
+            int retorno;
+            int id = Convert.ToInt32(txtIdFab.Text);
+
+            if (txtIdFab.Text == "" || id == 0)
+            {
+                MessageBox.Show("Campos inválidos");
+            }
+            else
+            {
+                ConexaoDB bd = new ConexaoDB();
+                retorno = bd.deleteFabricante(id);
+
+                if (retorno > 0)
+                {
+                    MessageBox.Show("Exclusão de fabricante realizada!");
+                }
+                else
+                {
+                    MessageBox.Show("Deu ruim");
+                }
+
             }
             txtIdFab.Text = "";
             txtDescFab.Text = "";
