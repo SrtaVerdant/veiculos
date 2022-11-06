@@ -34,7 +34,7 @@ namespace Projeto
 
         private void listBox1_SelectedValueChanged(object sender, EventArgs e)
         {
-            Console.WriteLine(selectFabricante.SelectedItem.ToString());
+            //Console.WriteLine(selectFabricante.SelectedItem.ToString());
         }
 
         private void btnInserirVeiculo_Click(object sender, EventArgs e)
@@ -51,7 +51,8 @@ namespace Projeto
             {   
                 String selectFab = selectFabricante.SelectedItem.ToString();
                 string[] s = selectFab.Split('-');
-                Fabricante fabricante = new Fabricante(Convert.ToInt32(s[0]), s[1]);     
+                Fabricante fabricante = new Fabricante(Convert.ToInt32(s[0].Trim()), s[1]);
+                
 
                 int id = Convert.ToInt32(txtCodVeiculo.Text);
                 int ano = Convert.ToInt32(txtAnoVeiculo.Text);
@@ -61,7 +62,7 @@ namespace Projeto
                 retorno = bd.insertVeiculo(veiculo);
                 if (retorno == 10)
                 {
-                    MessageBox.Show("Ja existe veiculo com o ID informado, tente novamente!");
+                    MessageBox.Show("Não é possivel cadastrar o veiculo com o ID informado, tente novamente!");
                 }else if (retorno > 0)
                 {
                     MessageBox.Show("Cad Efetuado");
@@ -145,7 +146,7 @@ namespace Projeto
 
         private void txtPrecoVeiculo_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)8 && e.KeyChar == ',')
+            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
             {
                 e.Handled = true;
             }
@@ -177,6 +178,38 @@ namespace Projeto
                 if (retorno > 0)
                 {
                     MessageBox.Show("Alteração de veiculo realizada!");
+                }
+                else
+                {
+                    MessageBox.Show("Deu ruim");
+                }
+                txtCodVeiculo.Text = "";
+                txtAnoVeiculo.Text = "";
+                txtModVeiculo.Text = "";
+                txtPrecoVeiculo.Text = "";
+                selectFabricante.SelectedIndex = 0;
+            }
+        }
+
+        private void btnExcluirVeiculo_Click(object sender, EventArgs e)
+        {
+            int retorno;
+
+            ConexaoDB bd = new ConexaoDB();
+
+            int id = Convert.ToInt32(txtCodVeiculo.Text);
+
+            if (txtCodVeiculo.Text == "" || id == 0)
+            {
+                MessageBox.Show("Campo ID inválido");
+            }
+            else
+            {                    
+                 retorno = bd.deleteVeiculo(id);
+
+                if (retorno > 0)
+                {
+                    MessageBox.Show("Exclusão de veiculo realizada!");
                 }
                 else
                 {

@@ -11,8 +11,6 @@ C:\Users\autologon\Desktop\Aula06C#\Projeto\Projeto\bin\Debug\Projeto.exe
 C:\Users\autologon\Desktop\Aula06C#\Projeto\Projeto\bin\Debug\Projeto.pdb
 C:\Users\autologon\Desktop\Aula06C#\Projeto\Projeto\obj\Debug\Projeto.exe
 C:\Users\autologon\Desktop\Aula06C#\Projeto\Projeto\obj\Debug\Projeto.pdb
-C:\Users\gabri\Downloads\Projeto (1)\Projeto\Projeto\bin\Debug\banco.mdf
-C:\Users\gabri\Downloads\Projeto (1)\Projeto\Projeto\bin\Debug\banco_log.ldf
 C:\Users\gabri\Downloads\Projeto (1)\Projeto\Projeto\bin\Debug\Projeto.exe.config
 C:\Users\gabri\Downloads\Projeto (1)\Projeto\Projeto\bin\Debug\Projeto.exe
 C:\Users\gabri\Downloads\Projeto (1)\Projeto\Projeto\bin\Debug\Projeto.pdb

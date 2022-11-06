@@ -69,6 +69,7 @@ namespace Projeto
             Veiculos veiculo1 = null;
             ConexaoDB conexaoDB = new ConexaoDB();
             veiculo1 = conexaoDB.getVeiculoById(veiculo.Id);
+
             if (veiculo1 == null)
             {
                 retorno = 10;
@@ -79,7 +80,7 @@ namespace Projeto
                 {
                     conexao.Open();
                     sql = "insert into Veiculos ( Id, Modelo, Ano, Preco, ID_Fabricante) values ( " + veiculo.Id + ", '"
-                        + veiculo.Modelo + "', '" + veiculo.Ano + "', '" + veiculo.Preco + "', '" + veiculo.Fabricante.Id + "')";
+                        + veiculo.Modelo + "', '" + veiculo.Ano + "', '" + veiculo.Preco+"','" + veiculo.Fabricante.Id + "')";
                     comando = new SqlCommand(sql, conexao);
                     retorno = comando.ExecuteNonQuery();
                     comando.Dispose();
@@ -88,8 +89,6 @@ namespace Projeto
                 {
                     MessageBox.Show("Erro" + ex.Message);
                 }
-
-                
             }
             return retorno;
         }
@@ -136,7 +135,7 @@ namespace Projeto
                 if (dr.HasRows)
                 {
                     dr.Read();
-                    fabricante = new Fabricante(Convert.ToInt32(dr["id"].ToString()), dr["descricao"].ToString());
+                    fabricante = new Fabricante(Convert.ToInt32(dr["Id"].ToString()), dr["descricao"].ToString());
                 }               
  
                 comando.Dispose();
@@ -166,6 +165,24 @@ namespace Projeto
                 MessageBox.Show("Erro" + ex.Message);
             }
             
+            return retorno;
+        }
+
+        public int deleteVeiculo(int id)
+        {
+            try
+            {
+                conexao.Open();
+                sql = "delete Veiculos where id = " + id;
+                comando = new SqlCommand(sql, conexao);
+                retorno = comando.ExecuteNonQuery();
+                comando.Dispose();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro" + ex.Message);
+            }
+
             return retorno;
         }
     }

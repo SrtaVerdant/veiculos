@@ -158,6 +158,7 @@
             this.btnExcluirVeiculo.TabIndex = 15;
             this.btnExcluirVeiculo.Text = "Excluir";
             this.btnExcluirVeiculo.UseVisualStyleBackColor = true;
+            this.btnExcluirVeiculo.Click += new System.EventHandler(this.btnExcluirVeiculo_Click);
             // 
             // selectFabricante
             // 
