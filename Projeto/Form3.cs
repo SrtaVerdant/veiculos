@@ -66,17 +66,7 @@ namespace Projeto
                 ConexaoDB bd = new ConexaoDB();
                 retorno = bd.insertVeiculo(veiculo);
 
-                if (retorno == 10)
-                {
-                    MessageBox.Show("Não é possivel cadastrar o veiculo com o ID informado, tente novamente!");
-                }else if (retorno > 0)
-                {
-                    MessageBox.Show("Cad Efetuado");
-                }
-                else
-                {
-                    MessageBox.Show("Deu ruim");
-                }
+                tratarRetorno(retorno);
                 limpaCampos();
             }
         }
@@ -122,23 +112,7 @@ namespace Projeto
                 }
                
             }
-        }
-
-        private void txtAnoVeiculo_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if(!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void txtPrecoVeiculo_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
-            {
-                e.Handled = true;
-            }
-        }
+        }       
 
         private void btnAlterarVeiculo_Click(object sender, EventArgs e)
         {
@@ -162,14 +136,7 @@ namespace Projeto
 
                 retorno = bd.updateVeiculo(veiculo);
 
-                if (retorno > 0)
-                {
-                    MessageBox.Show("Alteração de veiculo realizada!");
-                }
-                else
-                {
-                    MessageBox.Show("Deu ruim");
-                }
+                tratarRetorno(retorno);
                 limpaCampos();
             }
         }
@@ -189,15 +156,24 @@ namespace Projeto
                 ConexaoDB bd = new ConexaoDB();                
                 retorno = bd.deleteVeiculo(id);
 
-                if (retorno > 0)
-                {
-                    MessageBox.Show("Exclusão de veiculo realizada!");
-                }
-                else
-                {
-                    MessageBox.Show("Deu ruim");
-                }
+                tratarRetorno(retorno);
                 limpaCampos();
+            }
+        }
+
+        private void txtAnoVeiculo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtPrecoVeiculo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
+            {
+                e.Handled = true;
             }
         }
 
@@ -216,6 +192,18 @@ namespace Projeto
             txtModVeiculo.Text = "";
             txtPrecoVeiculo.Text = "";
             selectFabricante.SelectedIndex = 0;
+        }
+
+        private void tratarRetorno(int retorno)
+        {
+            if (retorno > 0)
+            {
+                MessageBox.Show("Operação realizada!");
+            }
+            else
+            {
+                MessageBox.Show("Erro! \nTente novamente");
+            }
         }
     }
 }

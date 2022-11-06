@@ -13,11 +13,6 @@ namespace Projeto
 {
     public partial class Form1 : Form
     {
-        SqlConnection conexao = new SqlConnection("Data Source=SRTAVERDANT;Initial Catalog=cadastro;Integrated Security=True");
-        SqlCommand comando;
-        SqlDataAdapter da;
-        SqlDataReader dr;
-        string strSQL;
         public Form1()
         {
             InitializeComponent();
@@ -44,9 +39,6 @@ namespace Projeto
             Close();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            
-        }
+        
     }
 }
